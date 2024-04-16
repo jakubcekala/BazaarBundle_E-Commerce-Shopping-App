@@ -22,7 +22,7 @@ extension XCUIElement {
         XCTAssert(exists)
     }
     
-    func waitForElementToAppear(timeout: TimeInterval = 5000) -> Bool {
+    func waitForElementToAppear(timeout: TimeInterval = 5) -> Bool {
         return waitForExistence(timeout: timeout)
     }
 }

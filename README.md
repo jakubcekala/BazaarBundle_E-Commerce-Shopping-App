@@ -1,3 +1,12 @@
+The purpose of this repository is to use the app implemented in [https://github.com/mrnirva/ShoppingApp](https://github.com/oemurlu/BazaarBundle_E-Commerce-Shopping-App) to create a testing framework based on XCUITest framework.
+
+Simple test report form Github Actions:
+
+![Screenshot 2024-04-16 at 16 02 54](https://github.com/jakubcekala/BazaarBundle_E-Commerce-Shopping-App/assets/75976627/50d1083c-c8ce-46ad-bccd-ace141d29b2d)
+
+
+
+
 # :moneybag: BazaarBundle_E-CommerceApp
 
 This is a simple E-Commerce app named BundleBazaar. You can see the details, video and screenshots below.

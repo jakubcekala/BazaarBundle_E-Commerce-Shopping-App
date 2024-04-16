@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: XCode
-        run: sudo xcode-select --install
       - name: iOS build setup
         run: >-
           xcodebuild test -workspace TestApp.xcodeproj/project.xcworkspace

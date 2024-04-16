@@ -2,7 +2,10 @@ The purpose of this repository is to use the app implemented in [https://github.
 
 Simple test report form Github Actions:
 
-![Screenshot 2024-04-16 at 16 02 54](https://github.com/jakubcekala/BazaarBundle_E-Commerce-Shopping-App/assets/75976627/50d1083c-c8ce-46ad-bccd-ace141d29b2d)
+
+https://github.com/jakubcekala/BazaarBundle_E-Commerce-Shopping-App/assets/75976627/c3081c71-495d-4d17-99b3-45f80bbd546a
+
+
 
 
 

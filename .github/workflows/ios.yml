@@ -1,0 +1,25 @@
+name: iOS starter workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build and Test default scheme using any available iPhone simulator
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: iOS build setup
+        run: >-
+          xcodebuild test -workspace Shopping-App-eCommerce.xcodeproj/project.xcworkspace -resultBundlePath TestResults
+          -scheme Shopping-App-eCommerce -destination 'platform=iOS Simulator,name=iPhone 13,OS=16.2'
+      - name: Test results
+        uses: kishikawakatsumi/xcresulttool@v1
+        with:
+          path: TestResults.xcresult
+        if: success() || failure()

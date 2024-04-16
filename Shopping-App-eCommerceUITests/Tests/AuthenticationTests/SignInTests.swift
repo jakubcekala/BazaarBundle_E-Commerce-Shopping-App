@@ -8,17 +8,21 @@
 import Foundation
 
 class AuthenticationTests: BaseTest {
-    
+
     func test_example() {
         WelcomeScreen(app)
             .verifyScreenElements()
-            .clickSignInButton()
+            .tapSignInButton()
             .enterCredentials(email: "test", password: "test")
+            .tapSignInButton()
+        DialogWindow(app)
+            .checkDialogContent(title: "ERROR", message: "The email address is badly formatted.")
+            .dismissDialog()
     }
     
     func test_example2() {
         WelcomeScreen(app)
             .verifyScreenElements()
-            .clickSignUpButton()
+            .tapSignUpButton()
     }
 }

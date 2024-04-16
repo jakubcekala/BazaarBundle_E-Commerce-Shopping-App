@@ -15,4 +15,10 @@ class BaseScreen {
     init(_ app: XCUIApplication) {
         self.app = app
     }
+    
+    func dismissKeyboardIfPresent() {
+        if app.keyboards.element(boundBy: 0).exists {
+            app.keyboards.buttons["Return"].tap()
+        }
+    }
 }

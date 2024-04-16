@@ -14,7 +14,15 @@ extension XCUIElement {
         XCTAssertEqual(label, expectedText, "XCUIElement text: \(label). Expected text: \(expectedText)")
     }
     
+    func checkHint(_ expectedHint: String) {
+        XCTAssertEqual(placeholderValue!, expectedHint, "XCUIElement hint: \(placeholderValue!). Expected hint: \(expectedHint)")
+    }
+    
     func checkExists() {
         XCTAssert(exists)
+    }
+    
+    func waitForElementToAppear(timeout: TimeInterval = 5000) -> Bool {
+        return waitForExistence(timeout: timeout)
     }
 }

@@ -14,14 +14,14 @@ class WelcomeScreen: BaseScreen {
     private lazy var signInButton = app.buttons.matching(identifier: "SignInButton").element
     private lazy var signUpButton = app.buttons.matching(identifier: "SignUpButton").element
     
-    func clickSignInButton() -> SignInScreen {
+    func tapSignInButton() -> SignInScreen {
         XCTContext.runActivity(named: String(format: Constants.stepLog, "Clicking (Sign in) Button")) { _ in
             signInButton.tap()
             return SignInScreen(app)
         }
     }
     
-    func clickSignUpButton() -> SignUpScreen {
+    func tapSignUpButton() -> SignUpScreen {
         XCTContext.runActivity(named: String(format: Constants.stepLog, "Clicking (Sign up) Button")) { _ in
             signUpButton.tap()
             return SignUpScreen(app)

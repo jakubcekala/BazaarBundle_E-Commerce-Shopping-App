@@ -17,12 +17,37 @@ class SignInScreen: BaseScreen {
     private lazy var signInButton = app.buttons.matching(identifier: "SignInButton").element
     private lazy var forgotPasswordButton = app.buttons.matching(identifier: "ForgotPasswordButton").element
     
-    func enterCredentials(email: String, password: String) {
+    func enterCredentials(email: String, password: String) -> Self {
         XCTContext.runActivity(named: String(format: Constants.stepLog, "Entering credentials - Email: \(email) - Password: \(password)")) { _ in
             emailTextField.tap()
             emailTextField.typeText(email)
             passwordTextField.tap()
             passwordTextField.typeText(password)
+            dismissKeyboardIfPresent()
+            return self
+        }
+    }
+    
+    func tapSignInButton() {
+        XCTContext.runActivity(named: String(format: Constants.stepLog, "Clicking (Sign in) Button")) { _ in
+            signInButton.tap()
+        }
+    }
+    
+    func tapForgotPasswordButton() {
+        XCTContext.runActivity(named: String(format: Constants.stepLog, "Clicking (Forgot password) Button")) { _ in
+            forgotPasswordButton.tap()
+        }
+    }
+    
+    func verifyScreenElements() {
+        XCTContext.runActivity(named: String(format: Constants.stepLog, "Checking Sign in Screen content")) { _ in
+            title1.checkText("Hello,")
+            title2.checkText("Sign in!")
+            emailTextField.checkHint("enter your mail")
+            passwordTextField.checkHint("enter your password")
+            signInButton.checkText("Sign in")
+            forgotPasswordButton.checkText("Forgot password")
         }
     }
     
